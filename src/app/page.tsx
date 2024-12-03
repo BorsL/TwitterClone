@@ -1,12 +1,14 @@
 import LeftSidebar from './sections/LeftSidebar';
-import { BsBell, BsTwitter, BsEnvelope,  BsDot, BsChat } from 'react-icons/bs';
-import { HiOutlineHashtag } from 'react-icons/hi';
-import {AiOutlineHeart, AiOutlineRetweet, } from 'react-icons/ai';
-import { IoPaperPlane, IoShareOutline, IoStatsChart } from 'react-icons/io5';
 import MainSection from './sections/MainSection';
 import RightSection from './sections/RightSection';
+import { login, signup } from './actions'
+import { createServerClient } from '@supabase/ssr';
+import { Database } from '@/lib/database.types';
+import { createClient } from '../../utils/supabase/server';
 
-export default function Home() {
+
+const Home = async () => {
+
   return (
     <div className="w-full min-h-screen flex bg-black text-white">
       {/* Left Sidebar */}
@@ -16,3 +18,5 @@ export default function Home() {
     </div>
   );
 }
+
+export default Home;
